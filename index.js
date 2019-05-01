@@ -2,6 +2,7 @@ const express = require('express');
 const bodyParser = require('body-parser');
 const passport = require('passport');
 const methodOverride = require('method-override');
+const flash = require('express-flash');
 
 
 // Turn these on when you initiate the DB // 
@@ -24,6 +25,7 @@ app.use(function(req, res, next) {
   res.locals.adminUser = req.user;
   next();
 });
+app.use(flash());
 
   app.locals.site =  {
       title: 'Site Title',

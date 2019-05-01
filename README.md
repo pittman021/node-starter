@@ -8,7 +8,8 @@ views includes a homepage, header, navbar including bulma css
 
 1. git clone URL to get started
 2. rename folder name to app name
-3. update app.locals in index.js
+3. rename package.json name
+3. update app.locals in index.js to your site settings.
 
 **create db**
 

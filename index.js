@@ -30,13 +30,13 @@ app.use(function(req, res, next) {
       description: 'This is your site description. Update it in your sites configuration file'
   }
   app.locals.author = {
-      name: 'Tim Pittman',
-      email: 'tim.pittman021@gmail.com',
-      twitter: '@pittman021',
-      linkedIn: 'linkedin.com/my/timothypittman'
+      name: 'author name',
+      email: 'email address',
+      twitter: '@twitterhandle',
+      linkedIn: 'linkedin.com'
   }
   app.locals.google_analytics = {
-    UA: 'UA-102047143-3'
+    UA: 'UA-######-##'
   }
 
 // Passport Config //

@@ -6,8 +6,8 @@ const flash = require('express-flash');
 
 
 // Turn these on when you initiate the DB // 
-// require('./services/passport');
-// const db = require('./models/index');
+require('./services/passport');
+const db = require('./models/index');
 
 const bCrypt = require('bcrypt-nodejs');
 

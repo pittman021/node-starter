@@ -1,34 +1,32 @@
 const passport = require('passport');
 const isLoggedIn = require('../services/isLoggedIn');
-const db = require('../models/index');
+// const db = require('../models/index');
 
 
 module.exports = app => {
   // Login Form
-  app.get('/admin/login', function(req, res) {
-    res.render('admin/login');
+  app.get('/login', function(req, res) {
+    res.render('login', { message: req.flash('error')});
   });
 
-  // app.get('/admin/signup', function(req, res) {
-  //   res.render('admin/signup');
-  // });
+  app.get('/signup', function(req, res) {
+    res.render('signup', { message: req.flash('error')});
+  });
 
   // Logout
-  app.get('/admin/logout', (req, res) => {
+  app.get('/logout', (req, res) => {
     req.logout();
     res.redirect('/');
   });
 
   // Login Route
-  app.post('/admin/login', passport.authenticate('local-login', { failureRedirect: '/admin/login' }), function(req, res) {
+  app.post('/login', passport.authenticate('local-login', { failureRedirect: '/login' }), function(req, res) {
     res.redirect('/');
   });
 
-  app.get('/admin/images', isLoggedIn, function(req, res) {
-    res.render('admin/images/new');
-  });
-
-  app.post('/admin/images', isLoggedIn, upload.single('img'), function(req, res) {
+  app.post('/signup', passport.authenticate('local-signup', { failureRedirect: '/signup', failureFlash : true }), function(req, res) {
     res.redirect('/');
   });
+
+
 };

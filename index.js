@@ -70,7 +70,7 @@ app.use(flash());
 // db.sequelize.sync();
 
 // ROUTES //
-// require('./routes/adminRoutes')(app);
+require('./routes/adminRoutes')(app);
 require('./routes/pageRoutes')(app);
 
 let port = process.env.PORT || 3000;

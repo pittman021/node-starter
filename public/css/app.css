@@ -17,3 +17,11 @@ html {
 #hero-cta-content {
     max-width: 725px;
 }
+
+.auth-box {
+  width:400px;
+  height:400px;
+  margin: 0 auto;
+  text-align:center;
+  margin-top:10%;
+}
